@@ -1,6 +1,6 @@
 # BluePicoNES
 
-BluePicoNES is a DIY retro gaming console based on Raspberry Pi Pico, PicoNES and BlueRetro.
+> BluePicoNES is an open-source DIY retro gaming console based on Raspberry Pi Pico, PicoNES and BlueRetro with Bluetooth, USB and original NES/SNES controller support.
 
 ## Features
 
