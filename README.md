@@ -58,17 +58,6 @@
 * DIY Friendly Design
 * Power Switch
 * Bluetooth Enable/Disable Switch
-## Hardware Used
-
-* Raspberry Pi Pico
-* ESP32-WROOM-32
-* Adafruit DVI Breakout
-* Adafruit MicroSD Breakout
-* USB-C PD Power Module
-* USB-A Controller Port
-* SNES Controller Connector
-* Schottky Diode
-* Capacitors
 
 ## Project Status
 
