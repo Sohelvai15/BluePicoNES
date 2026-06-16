@@ -375,14 +375,6 @@ Once paired, the controller will reconnect automatically whenever BluePicoNES is
 - PS4 DualShock 4
 - Various BlueRetro-compatible Bluetooth controllers
 
-### PS4 DualShock 4
-
-1. Power on BluePicoNES.
-2. Hold **PS + SHARE** on the controller.
-3. Wait until the LED starts blinking rapidly.
-4. BlueRetro should automatically detect and pair the controller.
-5. Once connected, the controller is ready to use.
-
 ---
 
 # 7. Tested Features
