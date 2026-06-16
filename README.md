@@ -24,6 +24,19 @@
 
 ![Rear View](rear-view.jpg)
 
+## Hardware Used
+
+- Raspberry Pi Pico
+- ESP32-WROOM-32
+- Adafruit DVI Breakout
+- Adafruit MicroSD Breakout
+- USB-C PD Module
+- USB-A Host Port
+- SS14 Schottky Diode
+- 100nF Capacitor
+- 47uF Capacitor
+- Power Switch
+- Bluetooth Switch
 
 ## Features
 
