@@ -61,14 +61,6 @@
 
 ✅ Fully Working
 
-## Gallery
-
-Project photos will be added soon.
-
-## Wiring Diagrams
-
-Wiring diagrams will be uploaded soon.
-
 ## License
 
 MIT License
