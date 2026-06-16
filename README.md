@@ -187,3 +187,177 @@ USB-C PD 5V → Power Switch → Pico VSYS
 - Dual Player Support
 - HDMI/DVI Output
 - microSD ROM Loading
+
+## Build Guide
+
+This guide explains how to assemble, flash and configure the BluePicoNES console.
+
+---
+
+# 1. Flashing PicoNES Firmware
+
+BluePicoNES uses the PicoNES firmware running on a Raspberry Pi Pico (RP2040).
+
+### Download Firmware
+
+Download the latest PicoNES release from:
+
+https://github.com/fhoedemakers/pico-infonesPlus/releases
+
+### Installation Steps
+
+1. Disconnect power from the console.
+2. Hold the **BOOTSEL** button on the Raspberry Pi Pico.
+3. While holding BOOTSEL, connect the Pico to your PC using a USB cable.
+4. The Pico will appear as a USB drive named **RPI-RP2**.
+5. Download the latest `.uf2` firmware file from the PicoNES release page.
+6. Drag and drop the `.uf2` file onto the **RPI-RP2** drive.
+7. The Pico will automatically reboot after flashing.
+
+### microSD Card Setup
+
+1. Format the microSD card as **FAT32**.
+2. Copy your NES ROM files (`.nes`) to the SD card.
+3. Insert the card into the microSD breakout board.
+4. Power on the console.
+
+---
+
+# 2. Flashing BlueRetro Firmware (ESP32)
+
+BluePicoNES uses BlueRetro to provide Bluetooth controller support.
+
+### Supported Controllers
+
+* PS3 Controller
+* PS4 DualShock 4
+* Generic Bluetooth Controllers
+* Other BlueRetro-compatible controllers
+
+### Online Flasher
+
+Open:
+
+https://yakaracolombia.github.io/esp32-online-tool/blueretro.html
+
+### Installation Steps
+
+1. Connect the ESP32 board to your PC using a USB cable.
+2. Open the BlueRetro Online Flasher page in Google Chrome or Microsoft Edge.
+3. Click **Connect**.
+4. Select the ESP32 serial port.
+5. Choose the latest BlueRetro firmware.
+6. Click **Install** and wait for flashing to complete.
+7. Reboot the ESP32.
+
+---
+
+# 3. Hardware Assembly
+
+### Main Components
+
+* Raspberry Pi Pico
+* ESP32-WROOM-32
+* Adafruit DVI Breakout
+* Adafruit microSD Breakout
+* USB-C PD Power Module
+* USB-A Host Port
+* Power Switch
+* Bluetooth Enable Switch
+
+### Wiring
+
+Follow the wiring table and diagrams included in this repository.
+
+Pay special attention to:
+
+* Power connections
+* USB Host wiring
+* DVI breakout connections
+* microSD SPI wiring
+* ESP32 BlueRetro wiring
+
+---
+
+# 4. Power-Up Checklist
+
+Before powering on:
+
+* Verify all GND connections
+* Verify VSYS power rail
+* Verify USB Host VBUS diode orientation
+* Verify microSD wiring
+* Verify DVI wiring
+* Verify ESP32 power switch operation
+
+---
+
+# 5. First Boot
+
+1. Insert the microSD card.
+2. Connect HDMI/DVI display.
+3. Connect USB controller or enable Bluetooth.
+4. Power on BluePicoNES.
+5. The PicoNES menu should appear on screen.
+
+---
+
+# 6. Bluetooth Controller Pairing
+
+### PS3 Controller
+
+1. Flash BlueRetro firmware to ESP32.
+2. Connect the PS3 controller via USB.
+3. Press the PS button.
+4. BlueRetro will store the controller address.
+5. Disconnect the USB cable.
+6. Press the PS button again.
+7. The controller should reconnect wirelessly.
+
+### PS4 DualShock 4
+
+1. Power on BluePicoNES.
+2. Hold **PS + SHARE** on the controller.
+3. Wait until the LED starts blinking rapidly.
+4. BlueRetro should automatically detect and pair the controller.
+5. Once connected, the controller is ready to use.
+
+---
+
+# 7. Tested Features
+
+✅ NES Emulation
+
+✅ microSD ROM Loading
+
+✅ HDMI/DVI Video Output
+
+✅ Bluetooth Controllers
+
+✅ PS3 Controller
+
+✅ PS4 Controller
+
+✅ Generic USB Controllers
+
+✅ Xbox Wired Controllers
+
+✅ Genuine NES Controllers
+
+✅ Genuine SNES Controllers
+
+✅ Dual Player Support
+
+---
+
+Enjoy retro gaming with BluePicoNES!
+## Credits
+
+PicoNES:
+https://github.com/fhoedemakers/pico-infonesPlus
+
+BlueRetro:
+https://github.com/darthcloud/BlueRetro
+
+BlueRetro Online Flasher:
+https://yakaracolombia.github.io/esp32-online-tool/blueretro.html
