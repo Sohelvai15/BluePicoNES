@@ -304,15 +304,76 @@ Before powering on:
 
 # 6. Bluetooth Controller Pairing
 
-### PS3 Controller
+## Bluetooth Controller Pairing
 
-1. Flash BlueRetro firmware to ESP32.
-2. Connect the PS3 controller via USB.
-3. Press the PS button.
-4. BlueRetro will store the controller address.
-5. Disconnect the USB cable.
-6. Press the PS button again.
-7. The controller should reconnect wirelessly.
+### PS3 Controller (Sixaxis)
+
+Unlike PS4 controllers, PS3 controllers require an additional pairing step before they can connect wirelessly to BlueRetro.
+
+### Step 1 – Find the BlueRetro Bluetooth MAC Address
+
+1. Power on BluePicoNES.
+2. Connect to the BlueRetro Web Configurator:
+
+   https://blueretro.io/
+
+3. Open the Bluetooth settings page.
+4. Locate and copy the Bluetooth MAC Address of your ESP32 BlueRetro device.
+
+Example:
+
+```text
+AA:BB:CC:DD:EE:FF
+```
+
+---
+
+### Step 2 – Download SixaxisPairTool
+
+Download SixaxisPairTool:
+
+https://sixaxispairtool.en.lo4d.com/windows
+
+Install and launch the application.
+
+---
+
+### Step 3 – Write the BlueRetro MAC Address
+
+1. Connect the PS3 controller to your PC using a USB cable.
+2. Open SixaxisPairTool.
+3. The current master address will be displayed.
+4. Paste the BlueRetro Bluetooth MAC Address obtained from Step 1.
+5. Click **Update** or **Write** to save the new address to the controller.
+
+---
+
+### Step 4 – Connect the Controller
+
+1. Disconnect the PS3 controller from USB.
+2. Power on BluePicoNES.
+3. Press the **PS** button on the controller.
+4. The controller should automatically connect to BlueRetro.
+
+Once paired, the controller will reconnect automatically whenever BluePicoNES is powered on.
+
+---
+
+### PS4 DualShock 4
+
+1. Power on BluePicoNES.
+2. Hold **PS + SHARE** for several seconds.
+3. The LED will begin flashing rapidly.
+4. BlueRetro will automatically detect and pair the controller.
+5. Once connected, the controller is ready to use.
+
+---
+
+### Supported Bluetooth Controllers
+
+- PS3 Sixaxis / DualShock 3
+- PS4 DualShock 4
+- Various BlueRetro-compatible Bluetooth controllers
 
 ### PS4 DualShock 4
 
