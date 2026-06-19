@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BluePicoNES</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Segoe UI,Arial,sans-serif;
+    background:#0a0f1f;
+    color:white;
+    line-height:1.6;
+}
+
+header{
+    text-align:center;
+    padding:80px 20px;
+    background:linear-gradient(135deg,#001f3f,#005eff);
+}
+
+header h1{
+    font-size:4rem;
+    color:#00d4ff;
+    text-shadow:0 0 20px #00d4ff;
+}
+
+header p{
+    max-width:900px;
+    margin:15px auto;
+    font-size:1.1rem;
+}
+
+.btn{
+    display:inline-block;
+    margin:10px;
+    padding:12px 24px;
+    background:#00d4ff;
+    color:black;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}
+
+section{
+    max-width:1200px;
+    margin:auto;
+    padding:60px 20px;
+}
+
+h2{
+    color:#00d4ff;
+    margin-bottom:25px;
+    border-bottom:2px solid #00d4ff;
+    padding-bottom:10px;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:10px;
+    border:2px solid #00d4ff;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#131b33;
+    border:1px solid rgba(0,212,255,0.3);
+    border-radius:10px;
+    padding:20px;
+}
+
+.card h3{
+    color:#00d4ff;
+    margin-bottom:10px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+table th{
+    background:#001f3f;
+}
+
+table th,
+table td{
+    border:1px solid rgba(0,212,255,0.3);
+    padding:12px;
+}
+
+ul{
+    padding-left:20px;
+}
+
+a{
+    color:#00d4ff;
+}
+
+footer{
+    text-align:center;
+    background:#050912;
+    padding:40px;
+    margin-top:40px;
+}
+
+.badge{
+    display:inline-block;
+    background:#003366;
+    color:#00d4ff;
+    padding:8px 15px;
+    margin:5px;
+    border-radius:20px;
+}
+
+</style>
+
+</head>
+<body>
+
+<header>
+
+<h1>🎮 BluePicoNES</h1>
+
+<p>
+A DIY Retro Gaming Console based on Raspberry Pi Pico,
+PicoNES and BlueRetro.
+</p>
+
+<p>
+Bluetooth Controllers • USB Controllers • NES/SNES Controllers •
+HDMI Output • Dual Player Gaming
+</p>
+
+<a class="btn" href="https://github.com/Madloader1/BluePicoNES">
+GitHub Repository
+</a>
+
+<a class="btn" href="#build-guide">
+Build Guide
+</a>
+
+</header>
+
+<section>
+
+<h2>Project Status</h2>
+
+<span class="badge">✅ Hardware Completed</span>
+<span class="badge">✅ PicoNES Working</span>
+<span class="badge">✅ BlueRetro Working</span>
+<span class="badge">✅ PS3 Support</span>
+<span class="badge">✅ PS4 Support</span>
+<span class="badge">✅ USB Controllers</span>
+<span class="badge">✅ NES/SNES Controllers</span>
+<span class="badge">✅ Custom Case</span>
+
+</section>
+
+<section>
+
+<h2>Project Gallery</h2>
+
+<div class="gallery">
+
+<img src="front-view-1.jpg">
+<img src="front-view-2.jpg">
+<img src="front-view-3.jpg">
+
+<img src="internal-view-1.jpg">
+<img src="internal-view-2.jpg">
+<img src="internal-view-3.jpg">
+
+<img src="rear-view.jpg">
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Features</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>🎮 PicoNES</h3>
+<p>NES emulation powered by Raspberry Pi Pico RP2040.</p>
+</div>
+
+<div class="card">
+<h3>📶 BlueRetro</h3>
+<p>Wireless Bluetooth controller support using ESP32.</p>
+</div>
+
+<div class="card">
+<h3>🕹 USB Controllers</h3>
+<p>Supports generic USB gamepads and Xbox wired controllers.</p>
+</div>
+
+<div class="card">
+<h3>🎯 Original Controllers</h3>
+<p>Supports genuine NES and SNES controllers.</p>
+</div>
+
+<div class="card">
+<h3>👥 Dual Player</h3>
+<p>Player 1 and Player 2 supported.</p>
+</div>
+
+<div class="card">
+<h3>💾 microSD Support</h3>
+<p>ROMs loaded directly from microSD card.</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Specifications</h2>
+
+<table>
+
+<tr>
+<th>Item</th>
+<th>Specification</th>
+</tr>
+
+<tr>
+<td>Main CPU</td>
+<td>Raspberry Pi Pico RP2040</td>
+</tr>
+
+<tr>
+<td>Bluetooth</td>
+<td>ESP32 + BlueRetro</td>
+</tr>
+
+<tr>
+<td>Storage</td>
+<td>microSD Card</td>
+</tr>
+
+<tr>
+<td>Video Output</td>
+<td>DVI / HDMI</td>
+</tr>
+
+<tr>
+<td>Power Input</td>
+<td>USB-C PD 5V</td>
+</tr>
+
+<tr>
+<td>Players</td>
+<td>2</td>
+</tr>
+
+<tr>
+<td>Controllers</td>
+<td>NES, SNES, USB, PS3, PS4</td>
+</tr>
+
+</table>
+
+</section>
+
+<section id="build-guide">
+
+<h2>Build Guide</h2>
+
+<div class="card">
+
+<h3>1. Flash PicoNES Firmware</h3>
+
+<p>
+Download the latest firmware from:
+</p>
+
+<p>
+<a href="https://github.com/fhoedemakers/pico-infonesPlus/releases">
+PicoNES Releases
+</a>
+</p>
+
+<ul>
+<li>Hold BOOTSEL while connecting Pico to PC.</li>
+<li>Open the RPI-RP2 drive.</li>
+<li>Copy the UF2 file.</li>
+<li>The Pico will reboot automatically.</li>
+</ul>
+
+</div>
+
+<br>
+
+<div class="card">
+
+<h3>2. Flash BlueRetro Firmware</h3>
+
+<p>
+<a href="https://yakaracolombia.github.io/esp32-online-tool/blueretro.html">
+BlueRetro Online Flasher
+</a>
+</p>
+
+<ul>
+<li>Connect ESP32 to PC.</li>
+<li>Open the flasher page.</li>
+<li>Select COM Port.</li>
+<li>Install latest firmware.</li>
+<li>Restart ESP32.</li>
+</ul>
+
+</div>
+
+<br>
+
+<div class="card">
+
+<h3>3. PS3 Controller Pairing</h3>
+
+<ul>
+<li>Find ESP32 Bluetooth MAC Address using BlueRetro Configurator.</li>
+<li>Download SixaxisPairTool.</li>
+<li>Connect PS3 controller via USB.</li>
+<li>Write ESP32 MAC Address to controller.</li>
+<li>Disconnect USB and press PS button.</li>
+<li>Controller will connect wirelessly.</li>
+</ul>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Supported Controllers</h2>
+
+<ul>
+<li>PS3 DualShock 3</li>
+<li>PS4 DualShock 4</li>
+<li>Generic Bluetooth Controllers</li>
+<li>Generic USB Controllers</li>
+<li>Xbox Wired Controller</li>
+<li>Original NES Controller</li>
+<li>Original SNES Controller</li>
+</ul>
+
+</section>
+
+<section>
+
+<h2>Downloads</h2>
+
+<ul>
+
+<li>
+<a href="https://github.com/fhoedemakers/pico-infonesPlus/releases">
+Download PicoNES Firmware
+</a>
+</li>
+
+<li>
+<a href="https://yakaracolombia.github.io/esp32-online-tool/blueretro.html">
+BlueRetro Online Flasher
+</a>
+</li>
+
+<li>
+<a href="https://blueretro.io/">
+BlueRetro Configurator
+</a>
+</li>
+
+<li>
+<a href="https://sixaxispairtool.en.lo4d.com/windows">
+SixaxisPairTool
+</a>
+</li>
+
+</ul>
+
+</section>
+
+<section>
+
+<h2>Wiring Diagrams</h2>
+
+<p>
+Upload your wiring diagrams into a Wiring folder and update the links below.
+</p>
+
+<ul>
+
+<li><a href="#">Full Wiring Diagram</a></li>
+
+<li><a href="#">PicoNES Wiring</a></li>
+
+<li><a href="#">BlueRetro Wiring</a></li>
+
+</ul>
+
+</section>
+
+<section>
+
+<h2>Credits</h2>
+
+<ul>
+
+<li>
+<a href="https://github.com/fhoedemakers/pico-infonesPlus">
+PicoNES
+</a>
+</li>
+
+<li>
+<a href="https://github.com/darthcloud/BlueRetro">
+BlueRetro
+</a>
+</li>
+
+<li>
+<a href="https://blueretro.io/">
+BlueRetro Configurator
+</a>
+</li>
+
+<li>
+<a href="https://yakaracolombia.github.io/esp32-online-tool/blueretro.html">
+BlueRetro Online Flasher
+</a>
+</li>
+
+</ul>
+
+</section>
+
+<footer>
+
+<h3>BluePicoNES v1.0</h3>
+
+<p>
+Designed and Built by Madloader
+</p>
+
+<p>
+© 2026 BluePicoNES Project
+</p>
+
+</footer>
+
+</body>
+</html>
